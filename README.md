@@ -1,0 +1,1 @@
+In this project we will create a monty interpreter using the C programming language.  
