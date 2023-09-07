@@ -34,17 +34,12 @@ typedef struct stack_s
 typedef struct instruction_s
 {
         char *opcode;
-        void (*f)(stack_td **stack, char *content, int line_number);
+        void (*f)(stack_td *stack, char *content, int line_number);
 } instruction_t;
 
-void pushfunct(stack_td **stack, char *content, int line_number);
-void pallfunct(stack_td **stack, char *content, int line_number);
-stack_td *checkinstruction(char *line, stack_td **stack, int line_number);
-
-instruction_t cases[] = {
-    {"push", pushfunct},
-    {"pall", pallfunct},
-    {NULL, NULL}
-};
+instruction_t *get_cases();
+void pushfunct(stack_td *stack, char *content, int line_number);
+void pallfunct(stack_td *stack, char *content, int line_number);
+stack_td *checkinstruction(char *line, stack_td *stack, int line_number);
 
 #endif
